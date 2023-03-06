@@ -93,6 +93,8 @@ def it_to_hdf(filename, data, groupname='', callback=None, errors='raise', delim
                 continue
             else:
                 v = v if new_v is None else new_v
+            
+            print("here")
                 
             if (is_tensor:=isinstance(v, torch.Tensor)) or isinstance(v, np.ndarray):
                 v = v.detach().cpu().numpy() if is_tensor else v
